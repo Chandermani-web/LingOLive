@@ -25,7 +25,7 @@ const App = () => {
   if (isLoading) return <PageLoader />;
 
   return (
-    <div className="h-screen bg-black text-white">
+    <div className="bg-black text-white">
       <Routes>
         <Route
           path="/"

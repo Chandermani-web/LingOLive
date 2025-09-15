@@ -104,7 +104,7 @@ const HomePage = () => {
                 return (
                   <div
                     key={user._id}
-                    className="card bg-base-200 hover:shadow-lg transition-all duration-300"
+                    className="card border-2 border-cyan-500 rounded-lg hover:shadow-lg transition-all duration-300"
                   >
                     <div className="card-body p-5 space-y-4">
                       <div className="flex items-center gap-3">
@@ -124,12 +124,12 @@ const HomePage = () => {
                       </div>
 
                       {/* Languages with flags */}
-                      <div className="flex flex-wrap gap-1.5">
-                        <span className="badge badge-secondary">
+                      <div className="flex flex-wrap gap-5.5">
+                        <span className="badge badge-secondary border-1 border-amber-500 px-2 rounded-2xl">
                           {getLanguageFlag(user.nativeLanguage)}
                           Native: {capitialize(user.nativeLanguage)}
                         </span>
-                        <span className="badge badge-outline">
+                        <span className="badge badge-outline border-1 border-amber-500 px-2 rounded-2xl">
                           {getLanguageFlag(user.learningLanguage)}
                           Learning: {capitialize(user.learningLanguage)}
                         </span>
@@ -139,22 +139,22 @@ const HomePage = () => {
 
                       {/* Action button */}
                       <button
-                        className={`btn w-full mt-2 ${
+                        className={`btn w-full mt-2 flex justify-center items-center p-1 ${
                           hasRequestBeenSent ? "btn-disabled" : "btn-primary"
                         } `}
                         onClick={() => sendRequestMutation(user._id)}
                         disabled={hasRequestBeenSent || isPending}
                       >
                         {hasRequestBeenSent ? (
-                          <>
+                          <span className="bg-gray-500 flex items-center justify-center p-1 w-full rounded-2xl border-2">
                             <CheckCircleIcon className="size-4 mr-2" />
                             Request Sent
-                          </>
+                          </span>
                         ) : (
-                          <>
+                          <span className="bg-green-500 flex items-center justify-center p-1 w-full rounded-2xl hover:bg-green-700 text-black">
                             <UserPlusIcon className="size-4 mr-2" />
                             Send Friend Request
-                          </>
+                          </span>
                         )}
                       </button>
                     </div>

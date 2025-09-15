@@ -47,7 +47,7 @@ const OnboardingPage = () => {
 
   return (
     <div className="min-h-screen bg-base-100 flex items-center justify-center p-4">
-      <div className="card bg-base-200 w-full max-w-3xl shadow-xl">
+      <div className="card bg-base-200 w-full max-w-3xl shadow-2xl shadow-amber-200">
         <div className="card-body p-6 sm:p-8">
           <h1 className="text-2xl sm:text-3xl font-bold text-center mb-6">Complete Your Profile</h1>
 
@@ -71,7 +71,7 @@ const OnboardingPage = () => {
 
               {/* Generate Random Avatar BTN */}
               <div className="flex items-center gap-2">
-                <button type="button" onClick={handleRandomAvatar} className="btn btn-accent">
+                <button type="button" onClick={handleRandomAvatar} className="btn flex items-center text-green-200">
                   <ShuffleIcon className="size-4 mr-2" />
                   Generate Random Avatar
                 </button>
@@ -88,13 +88,13 @@ const OnboardingPage = () => {
                 name="fullName"
                 value={formState.fullName}
                 onChange={(e) => setFormState({ ...formState, fullName: e.target.value })}
-                className="input input-bordered w-full"
+                className="border-2 border-zinc-400 px-3 py-2 w-full outline-0 rounded-xl placeholder:capitalize placeholder:text-zinc-400 focus-within:border-blue-400 focus-within:shadow-2xs focus-within:shadow-blue-400"
                 placeholder="Your full name"
               />
             </div>
 
             {/* BIO */}
-            <div className="form-control">
+            <div className="form-control ">
               <label className="label">
                 <span className="label-text">Bio</span>
               </label>
@@ -102,7 +102,7 @@ const OnboardingPage = () => {
                 name="bio"
                 value={formState.bio}
                 onChange={(e) => setFormState({ ...formState, bio: e.target.value })}
-                className="textarea textarea-bordered h-24"
+                className="border-2 border-zinc-400 px-3 py-2 w-full outline-0 rounded-xl placeholder:capitalize placeholder:text-zinc-400 focus-within:border-blue-400 focus-within:shadow-2xs focus-within:shadow-blue-400"
                 placeholder="Tell others about yourself and your language learning goals"
               />
             </div>
@@ -118,7 +118,7 @@ const OnboardingPage = () => {
                   name="nativeLanguage"
                   value={formState.nativeLanguage}
                   onChange={(e) => setFormState({ ...formState, nativeLanguage: e.target.value })}
-                  className="select select-bordered w-full"
+                  className="border-2 border-zinc-400 py-2 outline-0 rounded-xl placeholder:capitalize placeholder:text-zinc-400 focus-within:border-blue-400 focus-within:shadow-2xs focus-within:shadow-blue-400 w-full bg-black text-white px-1"
                 >
                   <option value="">Select your native language</option>
                   {LANGUAGES.map((lang) => (
@@ -138,7 +138,7 @@ const OnboardingPage = () => {
                   name="learningLanguage"
                   value={formState.learningLanguage}
                   onChange={(e) => setFormState({ ...formState, learningLanguage: e.target.value })}
-                  className="select select-bordered w-full"
+                  className="border-2 border-zinc-400 py-2 outline-0 rounded-xl placeholder:capitalize placeholder:text-zinc-400 focus-within:border-blue-400 focus-within:shadow-2xs focus-within:shadow-blue-400 w-full bg-black text-white px-1"
                 >
                   <option value="">Select language you're learning</option>
                   {LANGUAGES.map((lang) => (
@@ -162,7 +162,7 @@ const OnboardingPage = () => {
                   name="location"
                   value={formState.location}
                   onChange={(e) => setFormState({ ...formState, location: e.target.value })}
-                  className="input input-bordered w-full pl-10"
+                  className="border-2 border-zinc-400 px-3 py-2 w-full outline-0 rounded-xl placeholder:capitalize placeholder:text-zinc-400 focus-within:border-blue-400 focus-within:shadow-2xs focus-within:shadow-blue-400 pl-10"
                   placeholder="City, Country"
                 />
               </div>
@@ -170,7 +170,7 @@ const OnboardingPage = () => {
 
             {/* SUBMIT BUTTON */}
 
-            <button className="btn btn-primary w-full" disabled={isPending} type="submit">
+            <button className="font-semibold bg-blue-600 py-2 rounded-2xl hover:-translate-y-1 hover:bg-green-500 hover:shadow-2xl hover:shadow-green-300 transition-all duration-300 w-full flex justify-center items-center" disabled={isPending} type="submit">
               {!isPending ? (
                 <>
                   <ShipWheelIcon className="size-5 mr-2" />

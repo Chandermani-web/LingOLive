@@ -3,7 +3,7 @@ import { LANGUAGE_TO_FLAG } from "../constants";
 
 const FriendCard = ({ friend }) => {
   return (
-    <div className="card border-2 border-cyan-200 rounded-lg hover:shadow-md transition-shadow">
+    <div className="card border-2 border-amber-600 rounded-lg hover:shadow-md transition-shadow">
       <div className="card-body p-4">
         {/* USER INFO */}
         <div className="flex items-center gap-3 mb-3">
@@ -14,17 +14,17 @@ const FriendCard = ({ friend }) => {
         </div>
 
         <div className="flex flex-wrap gap-1.5 mb-3">
-          <span className="badge badge-secondary text-xs">
+          <span className="badge badge-secondary text-xs border-1 border-amber-500 px-2 rounded-2xl">
             {getLanguageFlag(friend.nativeLanguage)}
             Native: {friend.nativeLanguage}
           </span>
-          <span className="badge badge-outline text-xs">
+          <span className="badge badge-outline text-xs border-1 border-amber-500 px-2 rounded-2xl">
             {getLanguageFlag(friend.learningLanguage)}
             Learning: {friend.learningLanguage}
           </span>
         </div>
 
-        <Link to={`/chat/${friend._id}`} className="btn btn-outline w-full">
+        <Link to={`/chat/${friend._id}`} className="btn w-full border-2 block p-1 text-center rounded-2xl">
           Message
         </Link>
       </div>
